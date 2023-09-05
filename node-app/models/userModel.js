@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
+const {Schema , model} = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 
-const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-  roles: [String], // Roles assigned to the user (e.g., 'admin', 'user')
-});
+const User = new Schema({
+    username: String,
+    password: String,
+    roles: [String],
+  }); // Specify the collection name here
 
-userSchema.plugin(passportLocalMongoose);//conect passport with mongoose
+User.plugin(passportLocalMongoose);//conect passport with mongoose
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = model('User', User);
