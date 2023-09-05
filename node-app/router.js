@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const functi = require('./func/funcion')
+const functi = require('./authorization/authorization')
 
 
-router.post('/web/:a', functi.getFuncion)
+router.post('/registration', functi.registration)
 
 
 module.exports = router;
