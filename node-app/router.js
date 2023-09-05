@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const functi = require('./func/funcion')
 
 
-router.get('/', (req, res) => {
-  res.send('Welcome to the home page!');
-});
+router.post('/web/:a', functi.getFuncion)
 
 
 module.exports = router;
